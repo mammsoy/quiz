@@ -7,6 +7,10 @@ body {
     font: 16px Georgia, serif;
 }
 
+ul {    
+	list-style-type: none;
+}
+
 #page-wrap {
     margin: 2% auto;
     color: white;
