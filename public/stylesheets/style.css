@@ -8,7 +8,7 @@ body {
 }
 
 ul {    
-	list-style-type: none;
+    list-style-type: none;
 }
 
 #page-wrap {
@@ -43,4 +43,32 @@ nav span {
     margin: 0px 10px 0px 0px;
     width: 100%;
     display: inline-block;
+}
+
+.Cell img{
+    width: 50px;
+}
+
+.Table {
+    display: table;
+    margin: 0 auto;
+}
+
+.Title {
+    display: table-caption;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.Row {
+    display: table-row;
+}
+
+.Cell {
+    display: table-cell;
+    border: solid;
+    border-width: thin;
+    padding-left: 5px;
+    padding-right: 5px;
 }
