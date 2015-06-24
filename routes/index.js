@@ -1,16 +1,28 @@
 var express = require('express');
 var router = express.Router();
 
-var quizController = require('../controllers/quiz_controller.js');
+var tittle = 'Quiz';
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.render('index', { title: 'Quiz' });
+  
+  res.render('index', { title: tittle, errors: null });
+
 });
 
-router.get ('/quizes', quizController.findQuestions);
-router.get ('/quizes/question', quizController.question);
-router.get ('/quizes/answer', quizController.answer);
+var quizController = require('../controllers/quiz_controller.js');
+
+router.param('quizId', quizController.load);
+
 router.get ('/author', quizController.author);
+router.get ('/quizes', quizController.findQuestions);
+router.get ('/quiz/new', quizController.new);
+router.get ('/quiz/:quizId(\\d+)/edit', quizController.edit);
+router.get ('/quiz/question', quizController.question);
+router.get ('/quiz/answer', quizController.answer);
+
+router.post ('/quiz/create', quizController.create);
+router.put ('/quiz/:quizId(\\d+)', quizController.update);
+router.delete ('/quiz/:quizId(\\d+)', quizController.delete);
 
 module.exports = router;

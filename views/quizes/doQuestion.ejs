@@ -1,0 +1,36 @@
+<form method='post' action='<%= action %>'>
+
+	<div class="Table" style="width: 30%; margin-top: 15px" >
+		<div class="Title">Lista de preguntas</div>
+		<div class="Row">
+			<div class="Cell">Pregunta</div>
+			<div class="Cell">Respuesta</div>
+			<div class="Cell">Tema</div>
+		</div>
+		<div class="Row">
+			<div class="Cell">
+				<input type="text" id="pregunta" name="quiz[pregunta]" value="<%= quiz.pregunta %>">
+			</div>
+			<div class="Cell">
+				<input type="text" id="respuesta" name="quiz[respuesta]" value="<%= quiz.respuesta %>"><p>
+			</div>
+			<div class="Cell">
+				<select id="tema" name="quiz[tema]">
+				  <option value="otro" <%= (quiz.tema === 'otro')? 'selected' : '' %> >Otro</option>
+				  <option value="humanidades" <%= (quiz.tema === 'humanidades')? 'selected' : '' %> >Humanidades</option>
+				  <option value="ocio" <%= (quiz.tema === 'ocio')? 'selected' : '' %> >Ocio</option>
+				  <option value="ciencia" <%= (quiz.tema === 'ciencia')? 'selected' : '' %> >Ciencia</option>
+				  <option value="tecnologia" <%= (quiz.tema === 'tecnologia')? 'selected' : '' %> >Tecnología</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="Table" style="width: 30%; margin-top: 15px" >
+		<div class="Row">
+			<div class="Cell" >
+				<input type="submit" name="Salvar" value="Salvar" />	
+				<input type="button" name="Cancel" value="Cancel" onclick="javascript:window.location.href='/quizes';" />	
+			</div>
+		</div>
+	</div>
+</form>

@@ -6,8 +6,8 @@
     "start": "node ./bin/www"
   },
   "devDependencies": {
-    "sqlite3": "~2.2.0"
-  },
+     "node-env-file": "~0.1.7"
+   },
   "dependencies": {
     "express": "~4.9.0",
     "body-parser": "~1.8.1",
@@ -19,6 +19,7 @@
     "express-partials": "~0.3.0",
     "sequelize": "~1.7.0",
     "pg": "~4.1.1",
-    "pg-hstore": "~2.3.2"
+    "pg-hstore": "~2.3.2",
+    "method-override": "~2.3.3"
   }
 }

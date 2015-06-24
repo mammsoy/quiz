@@ -1,0 +1,32 @@
+
+<form id='form' method='GET' action='/quizes'>
+	<div>
+		Texto de pregunta para buscar:
+	    <input type='text' name='search' value='' />
+	    <input type='submit' value='Enviar' />
+	</div>
+	<div><br><a href="/quiz/new">Crear Pregunta</a></div>
+	<div>
+    <% if ( questionsList.length === 0) { %>
+		<div> No se han encontrado preguntas.</div>
+	<% } else { %>
+	<div class="Table" style="width: 30%; margin-top: 15px" >
+		<div class="Title">Lista de preguntas</div>
+	<% 
+		var i;
+
+		for ( i=0; i < questionsList.length; i++ ) {
+
+	%>
+		<div class="Row">
+			<div class="Cell"><%= questionsList[i].id %></div>
+			<div class="Cell"><%= questionsList[i].pregunta %></div>
+			<div class="Cell"><a href="/quiz/<%= questionsList[i].id %>/edit"><img src="/images/edit.png" class="icon" /></a></div>
+			<div class="Cell"><a href="javascript:deleteQuestion('/quiz/<%= questionsList[i].id %>?_method=delete');"><img src="/images/delete.png" class="icon" /></a></div>
+		</div>
+	<%
+		}
+	  }
+	%>	    
+    </div>    
+</form>
