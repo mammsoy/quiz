@@ -6,8 +6,8 @@
     "start": "node ./bin/www"
   },
   "devDependencies": {
-     "node-env-file": "~0.1.7"
-   },
+    "node-env-file": "~0.1.7"
+  },
   "dependencies": {
     "express": "~4.9.0",
     "body-parser": "~1.8.1",
@@ -20,6 +20,7 @@
     "sequelize": "~1.7.0",
     "pg": "~4.1.1",
     "pg-hstore": "~2.3.2",
-    "method-override": "~2.3.3"
+    "method-override": "~2.3.3",
+    "express-session": "~1.11.3"
   }
 }

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var tittle = 'Quiz';
+//var tittle = 'Quiz';
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -11,8 +11,13 @@ router.get('/', function(req, res) {
 });
 
 var quizController = require('../controllers/quiz_controller.js');
+var sessionController = require('../controllers/session_controller.js');
 
 router.param('quizId', quizController.load);
+
+router.get ('/login', sessionController.new);
+router.put ('/login', sessionController.create);
+router.get ('/logout', sessionController.destroy);
 
 router.get ('/author', quizController.author);
 router.get ('/quizes', quizController.findQuestions);

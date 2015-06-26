@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8"><title> <%=: (title === null)? '' : title %></title>
+  <meta charset="utf-8"><title> <%=:  title  %></title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <link rel='stylesheet' 
         type='text/css'
@@ -19,7 +19,10 @@
 <body>
 <div id="page-wrap">
   <header class="main" id="h1">  
-    <h2><%=: (title === null)? '' : title  %><span>: el juego de las preguntas</span></h2>
+    <h2><%=: title %><span>: el juego de las preguntas</span></h2>
+    <% if (session.user) { %>
+    <span><a href="/logout">Desconexión</a></span>
+    <% } %>
   </header>
 
   <nav class="main" id="n1" role="navigation">
@@ -33,7 +36,7 @@
     <div>
         <span id="ErrorMsgs" class="error">
           <% for (var err in errors)  { %>
-          <span><%=: errors[err] + ' en "' + err + '"' %></span><br>
+          <span><%=: err + ': ' + errors[err]  %></span><br>
           <% } %>
         </span>
     </div>
@@ -44,7 +47,7 @@
   <footer class="main" id="f1">
     <ul>
       <li>
-        <a href="http://es.wikipedia.org/wiki/Quiz">¿Que es un <%=: (title === null)? '' : title  %>?</a>
+        <a href="http://es.wikipedia.org/wiki/Quiz">¿Que es un <%=:  title %>?</a>
       </li>
       <li>
         <a href="https://github.com/mammsoy/quiz">GitHub</a>

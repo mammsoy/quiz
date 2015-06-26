@@ -1,4 +1,4 @@
-var tittle = 'Quiz';
+//var tittle = 'Quiz';
 
 var models = require('../models/models.js');
 	
